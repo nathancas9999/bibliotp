@@ -1,0 +1,9 @@
+.catalogue-header { text-align: center; margin-bottom: 2rem; }
+.catalogue-header h1 { font-family: var(--header-font); font-size: 3rem; color: var(--primary-color); }
+
+.search-bar { display: flex; gap: 1rem; margin-bottom: 3rem; background: var(--card-background); padding: 1rem; border-radius: 50px; box-shadow: var(--shadow); }
+.search-bar input { flex-grow: 1; padding: 12px 15px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; }
+.search-bar .btn { border-radius: 50px; }
+
+/* On réutilise les styles .book-grid, .book-card etc. du fichier index.css */
+.no-results { grid-column: 1 / -1; text-align: center; padding: 3rem; }

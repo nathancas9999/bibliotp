@@ -1,0 +1,219 @@
+/* ============ PAGE BOUTIQUE ============ */
+.boutique-container {
+  max-width: 1200px;
+  margin: 120px auto 40px;
+  padding: 0 20px;
+}
+
+.boutique-header h1 {
+  font-family: 'Edu NSW ACT Cursive', cursive;
+  font-size: 3rem;
+  color: #a75d67;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* --- Système de filtres responsive --- */
+.boutique-controls-wrapper {
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
+.filter-toggle-button {
+    display: none; /* Caché par défaut, visible sur mobile */
+}
+
+.boutique-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #fdeef4;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.filter-group {
+  flex-grow: 1;
+}
+
+.filter-group input[type="text"],
+.filter-group select {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-family: 'Poppins', sans-serif;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-sizing: border-box;
+}
+
+.apply-filters-button {
+  background-color: #d46a92;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* --- Grille des produits --- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem; 
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.product-link {
+  text-decoration: none;
+}
+
+.product-image-container {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Crée un carré parfait pour l'image */
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.product-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Assure que toute l'image est visible, sans être coupée */
+  transition: transform 0.4s ease;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.product-card:hover .product-image-container img {
+  transform: scale(1.05);
+}
+
+.product-info {
+  padding: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-info h3 {
+  font-family: 'Edu NSW ACT Cursive', cursive;
+  font-size: 1.6rem; 
+  color: #a75d67;
+  margin: 0 0 0.5rem;
+}
+
+.product-info p.price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #4c3a4c;
+  margin: 0 0 1.5rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.product-info .add-to-cart-form {
+  margin-top: auto;
+}
+
+.product-info .btn-add {
+  background-color: #d46a92;
+  color: white;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.no-results {
+    grid-column: 1 / -1; /* Prend toute la largeur de la grille */
+    text-align: center;
+    padding: 3rem;
+    color: #a75d67;
+    font-size: 1.2rem;
+}
+
+/* ============ RESPONSIVE BOUTIQUE ============ */
+@media (max-width: 1024px) {
+    .filter-toggle-button {
+        display: block; /* Affiche le bouton de bascule */
+    }
+
+    .boutique-controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+        position: absolute;
+        top: calc(100% + 10px); /* Positionné sous le bouton avec un petit espace */
+        left: 0;
+        right: 0; /* Ajouté pour s'étirer sur toute la largeur disponible */
+        width: auto; /* CORRIGÉ : On laisse le navigateur calculer la largeur */
+        z-index: 50;
+        transform: translateY(-10px);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
+        box-sizing: border-box; /* S'assure que le padding ne cause pas de dépassement */
+    }
+
+    .boutique-controls.show {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    
+}
+
+@media (max-width: 768px) {
+    .filter-toggle-button {
+        display: block; /* Affiche le bouton */
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+        background-color: #d46a92;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+    }
+
+    .boutique-controls {
+        display: none; /* Cache les filtres par défaut */
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .boutique-controls.show {
+        display: flex; /* Affiche les filtres quand on clique sur le bouton */
+    }
+}

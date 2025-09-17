@@ -1,0 +1,23 @@
+.site-header {
+  background-color: var(--card-background);
+  padding: 0 1rem;
+  box-shadow: var(--shadow);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  height: 70px;
+}
+.header-logo a { text-decoration: none; color: var(--primary-color); font-family: var(--header-font); font-size: 1.8rem; font-weight: bold; }
+.header-nav { display: flex; align-items: center; gap: 2rem; }
+.header-nav a { color: var(--text-color); text-decoration: none; font-weight: bold; position: relative; padding-bottom: 5px; }
+.header-nav a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 50%; transform: translateX(-50%); background-color: var(--secondary-color); transition: width 0.3s ease; }
+.header-nav a:hover::after { width: 100%; }
+.header-actions { display: flex; align-items: center; gap: 1.5rem; }
+.header-actions .welcome-text { font-weight: bold; }
+.header-actions a { color: var(--primary-color); text-decoration: none; }

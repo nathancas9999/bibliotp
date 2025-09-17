@@ -1,0 +1,9 @@
+.profil-header { text-align: center; margin-bottom: 2rem; }
+.profil-header h1 { font-size: 3rem; color: var(--primary-color); }
+.reservations-table { width: 100%; border-collapse: collapse; }
+.reservations-table th, .reservations-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #eee; }
+.reservations-table .livre-info { display: flex; align-items: center; gap: 15px; }
+.reservations-table img { width: 50px; height: 70px; object-fit: cover; border-radius: 4px; }
+.statut-badge { padding: 5px 12px; border-radius: 20px; color: white; font-weight: bold; font-size: 0.9rem; }
+.statut-active { background-color: #27ae60; }
+.btn-annuler { background-color: #c0392b; font-size: 0.9rem; padding: 8px 15px; }

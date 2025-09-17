@@ -1,0 +1,79 @@
+/* --- Variables de Couleurs et Style de Base --- */
+:root {
+  --primary-color: #005f73;    /* Bleu-vert foncé */
+  --secondary-color: #0a9396; /* Turquoise */
+  --accent-color: #e9d8a6;     /* Beige doré */
+  --background-color: #f4f6f8; /* Gris très clair */
+  --card-background: #ffffff;
+  --text-color: #333;
+  --header-font: 'Georgia', 'Times New Roman', serif;
+  --body-font: 'Arial', 'Helvetica', sans-serif;
+  --radius: 8px;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding-top: 70px; /* Espace pour le header fixe */
+}
+
+main {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* --- Éléments Communs --- */
+.btn {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 10px 25px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  background: var(--card-background);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  border: 1px solid #e0e0e0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background-color: #f9f9f9;
+  font-weight: bold;
+}

@@ -1,0 +1,82 @@
+.livre-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+    background: var(--card-background);
+    padding: 3rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.livre-cover img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+}
+
+.livre-infos h1 {
+    font-family: var(--header-font);
+    font-size: 2.8rem;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.livre-infos .auteur {
+    font-family: var(--header-font);
+    font-size: 1.5rem;
+    color: #777;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.meta-info {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.meta-info span {
+    font-size: 0.9rem;
+}
+
+.synopsis h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.synopsis p {
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.disponibilite {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.disponibilite .stock-dispo, .disponibilite .stock-epuise {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.disponibilite .stock-dispo { color: #27ae60; }
+.disponibilite .stock-epuise { color: #c0392b; }
+
+/* Responsive pour les petits écrans */
+@media (max-width: 768px) {
+    .livre-detail-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
+}
